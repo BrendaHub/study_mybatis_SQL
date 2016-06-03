@@ -53,4 +53,13 @@
   	<url-pattern>/AutoReplyServlet.action</url-pattern>
   </servlet-mapping>
   
+  <servlet>
+  	<servlet-name>AskServlet</servlet-name>
+  	<servlet-class>com.imooc.servlet.AskServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>AskServlet</servlet-name>
+  	<url-pattern>/askpage.action</url-pattern>
+  </servlet-mapping>
+  
 </web-app>

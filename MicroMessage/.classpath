@@ -9,5 +9,6 @@
 	<classpathentry kind="lib" path="D:/Apache Tomcat/apache-tomcat-7.0.69/lib/el-api.jar"/>
 	<classpathentry kind="lib" path="D:/Apache Tomcat/apache-tomcat-7.0.69/lib/jsp-api.jar"/>
 	<classpathentry kind="lib" path="D:/Apache Tomcat/apache-tomcat-7.0.69/lib/servlet-api.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/fastjson-1.2.9.jar"/>
 	<classpathentry kind="output" path="WebRoot/WEB-INF/classes"/>
 </classpath>

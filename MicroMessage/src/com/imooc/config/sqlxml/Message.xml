@@ -44,6 +44,16 @@
   
   <sql id="columns">ID,COMMAND,DESCRIPTION,CONTENT</sql>
   
+  <select id="queryListByIn" parameterType="java.util.List" resultMap="MessageResult">
+  	select <include refid="columns"/> from MESSAGE
+  	<where>
+  		ID in 
+  		<foreach collection="list" item="itemlist" open="(" separator="," close=")">
+  			#{itemlist}
+  		</foreach>
+  	</where>
+  </select>
+  
   <delete id="deleteOne" parameterType="int">
   	delete from MESSAGE where ID = #{_parameter}
   </delete>
