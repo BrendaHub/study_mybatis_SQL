@@ -20,5 +20,10 @@ public class Test {
 		Integer[] ints = new Integer[]{23,43,232,22,11};
 		List<Object> list1 = pgtl1.parseArrToList(ints);
 		System.out.println(list1);
+		
+		parseGeneralToList pgtl2 = (parseGeneralToList)phandler.bind(new IntegerArrToList());
+		Integer[] ints1 = new Integer[]{23,43,232,22,11};
+		List<Object> list2 = pgtl2.parseArrToList(ints1);
+		System.out.println(list2);
 	}
 }
