@@ -13,12 +13,12 @@
 </head>
 <body>
 	<input type="hidden" value="<%= basePath %>" id="basePath"/>
-	<input type="text" name="search" id="search" value=""/>
+	<input type="text" id="search_ID" value=""/>
 	<input type="button" name="" value="新 增" id="askbut"/>
 	<br/>
 	<div style="margin-top:5px;">
 	新 增：
-	<textarea rows="5" cols="30"></textarea>
+	<div id="textArea_ID"></div>
 	</div>
 </body> 
 <script>
@@ -28,11 +28,19 @@
 			{
 				type:"GET",
 				url:$("#basePath").val() + "askpage.action",
-				data:"json",
-				success:function(date){
-					alert(date[0].command);
+				data:{"IDS": $("#search_ID").val()},
+				dataType:"json",
+				success:function(data){
+					$("#textArea_ID").empty();
+					var html = "";
+					$.each(data, function(commentIndex, comment){
+						html += "第" +commentIndex+ "条记录：<br/>";
+						html += comment.id + " || " + comment.content;
+						html += "<br/>";
+					});
+					$("#textArea_ID").html(html);
 				}
-			}		
+			}
 			);
 		});
 	});

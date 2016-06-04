@@ -26,6 +26,13 @@ public class AskServlet extends HttpServlet {
 		//req.setCharacterEncoding("utf-8");
 		//调用service类
 //		req.setAttribute("list", JSON.toJSONString(new AskService().queryListByIn()));
+		//获取请求参数
+		String ids = req.getParameter("IDS");
+		String name = req.getParameter("name");
+		logger.debug(">>>>获取到了请求参数IDS为 >>> " + ids +"  >> Name = " + name);
+		if(ids != null && !"".equals(ids)){
+			ids.split(",");
+		}
 		resp.setContentType("application/json");
 		String jsonStr = JSON.toJSONString(new AskService().queryListByIn());
 		logger.debug(">>>>  debug >>> " + jsonStr);
