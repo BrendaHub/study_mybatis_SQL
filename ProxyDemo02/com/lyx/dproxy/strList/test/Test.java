@@ -15,7 +15,7 @@ public class Test {
 		String[] arr = new String[]{"aaa","bbb"};
 		List<Object> list = pgtl.parseArrToList(arr);
 		System.out.println(list);
-		
+		  
 		parseGeneralToList pgtl1 = (parseGeneralToList)phandler.bind(new IntegerArrToList());
 		Integer[] ints = new Integer[]{23,43,232,22,11};
 		List<Object> list1 = pgtl1.parseArrToList(ints);
