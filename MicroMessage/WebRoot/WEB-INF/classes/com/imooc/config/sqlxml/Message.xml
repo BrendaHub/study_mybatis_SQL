@@ -65,4 +65,13 @@
   		</foreach>
   	)
   </delete>
+  
+  <sql id="columnsNoID">COMMAND,DESCRIPTION,CONTENT</sql>
+  
+  <insert id="InsertMessageModel" useGeneratedKeys="true" keyProperty="ID" >
+  	insert into message (
+  		<include refid="columnsNoID"></include>
+  	)
+	values(#{command},#{desc},#{content})
+  </insert>
 </mapper>

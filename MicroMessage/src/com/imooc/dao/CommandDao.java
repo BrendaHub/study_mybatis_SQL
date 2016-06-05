@@ -7,6 +7,7 @@ import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 
 import com.imooc.bean.Command;
+import com.imooc.bean.Message;
 import com.imooc.db.DBAccess;
 
 /**
@@ -36,5 +37,31 @@ public class CommandDao {
 			}
 		}
 		return commandList;
+	}
+	
+	/**
+	 * 
+	 */
+	public Integer InsertMessageModel(Message message){
+		Integer newItemId = null;
+		DBAccess dbAccess = new DBAccess();
+		SqlSession sqlSession = null;
+		if(message != null){
+			try {
+				sqlSession = dbAccess.getSqlSession();
+				Message m = new Message();
+				m.setCommand("技术");
+				m.setDescription("技术门类");
+				m.setContent("Lucesen redis ");
+				sqlSession.insert("Message.InsertMessageModel", m);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}finally{
+				if(sqlSession!=null){
+					sqlSession.close();
+				}
+			}
+		}
+		return newItemId ; 
 	}
 }

@@ -30,4 +30,8 @@ public class MaintainService {
 		}
 		messageDao.deleteBatch(idList);
 	}
+	/**
+	 * 单条插入
+	 */
+	public 
 }
