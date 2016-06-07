@@ -1,5 +1,9 @@
 package com.lyx.staticfactory;
 
+/**
+ * 简单方法模式
+ *   实现的核心就是以一个实例类为基础进行创建工厂方法，来实例相对应的对象。
+ */
 interface Car{
 	public void run();
 	public void stop();
