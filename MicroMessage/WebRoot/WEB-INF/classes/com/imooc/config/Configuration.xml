@@ -49,6 +49,7 @@
     <mapper resource="com/imooc/config/sqlxml/Message.xml"/>
     <mapper resource="com/imooc/config/sqlxml/Command.xml"/>
     <mapper resource="com/imooc/config/sqlxml/CommandContent.xml"/>
+    <mapper resource="com/imooc/config/sqlxml/User.xml"/>
   </mappers>
 
 </configuration>
