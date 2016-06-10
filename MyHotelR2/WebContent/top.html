@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk" />
+<title></title>
+<style type="text/css">
+body{margin:0px;}
+</style>
+
+<link href="lyoa.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body onload="times()"><table width="100%" height="30" border="0" cellpadding="0" cellspacing="0" style="margin:0px;">
+  <tr>
+    <td bgcolor="#006699"><img src="images/logo3.gif" width="450"  height="30" />&nbsp;&nbsp;&nbsp;</td>
+   <td width="30%" align="left" bgcolor="#006699" style=" color:#FFFFFF">
+	
+	
+
+                               <div id='k' style="color:#FFFFFF">
+       <div align="right">xc</div>
+    </div>
+
+      <div align="right">
+  <script language=javascript>
+  function times(){
+  var d=new initArray("星期日","星期一","星期二","星期三","星期四","星期五","星期六"); 
+		
+				var enabled = 0; today = new Date();
+var day; var date;
+if(today.getDay()==0) day = "星期日"
+if(today.getDay()==1) day = "星期一"
+if(today.getDay()==2) day = "星期二"
+if(today.getDay()==3) day = "星期三"
+if(today.getDay()==4) day = "星期四"
+if(today.getDay()==5) day = "星期五"
+if(today.getDay()==6) day = "星期六"
+ var today=new Date();
+      hour=today.getHours();
+      minute=today.getMinutes();
+      second=today.getSeconds();
+     k.innerHTML="今天是:" + (today.getFullYear()) + "年" + (today.getMonth() + 1 ) + "月" + today.getDate() + "日 &nbsp;"+number_length(hour,2)+":"+number_length(minute,2)+":"+number_length(second,2)+"&nbsp;&nbsp;&nbsp;"+day
+   setTimeout("times()",800);
+}
+
+//数字长度补充
+function number_length(N, L)
+{
+	N = N + '';
+	M_len = L - N.length;
+
+	for (i = 0; i < M_len; i++)
+	{
+		N = "0" + N;
+	}
+	return N;
+}
+function initArray(){
+this.length=initArray.arguments.length
+for(var i=0;i<this.length;i++)
+this[i+1]=initArray.arguments[i]  }
+</script>         
+  </div></td>
+	 
+    <td width="0%" bgcolor="#006699">&nbsp;</td>
+  </tr>
+ 
+</table>
+
+</body>
+</html>

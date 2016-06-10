@@ -1,0 +1,255 @@
+.JobResultListMenu{
+	background-color:#2E73BE;
+	background-image:url('images/unicorn_JobList_BG.gif');
+	padding-left:2px;
+	height:22px;
+	border-right:1px solid #ffffff;
+	color:#ffffff;
+}
+.JobResultListTD{
+	height:23px;
+	border-left:1px solid #ffffff;
+	border-right:1px solid #CDDDED;
+	border-bottom:1px solid #CDDDED;
+	color:#002866;
+	padding-left:0px;
+}
+.JobResultListMenuDIV{
+	height:22px;
+	width:100%;
+	background:#ff0000;
+	overflow-y:scroll;
+	border:0px;
+}
+.ListBorder{
+	border-top:1px solid #3C6691;
+	border-left:1px solid #3C6691;
+	border-right:1px solid #ffffff;
+	border-bottom:1px solid #ffffff;
+	background-color:#ffffff;
+}
+.GoPageInput {
+	height:17px;
+	width:30px;
+	color: #002866;
+	font-size: 12px;
+	border-top:1px solid #3C6691;
+	border-left:1px solid #3C6691;
+	border-right:1px solid #DEE8F1;
+	border-bottom:1px solid #DEE8F1;
+	behavior:url(/JS/numbox.htc);
+}
+.GoPageButton {
+	width:30px;
+	height:17px;
+	color: #ffffff;
+	font-size: 12px;
+	font-family: Arial, Helvetica, sans-serif;
+	border-top:1px solid #ffffff;
+	border-left:1px solid #ffffff;
+	border-right:1px solid #1F4B7C;
+	border-bottom:1px solid #1F4B7C;
+	background-color:#2E73BE;
+}
+
+th.fixed
+{
+	border: 1px solid; 
+    color:#ffffff;
+	font-style:normal;
+	font-weight:normal;
+	height:20px;
+	cursor:default;
+}
+.gridCell_narrow
+{
+	width:25px;
+	overflow:hidden;
+	margin-left: 0px;
+	margin-right: 1px;
+	padding-left: 2px;
+	nw:expression(this.noWrap=true);
+	cursor:default;
+}
+.tableContainer
+{
+	overflow-x:scroll;
+	width:100%;
+	height:100%;
+	dyn-behavior:expression(
+		onscroll == null?
+			(onscroll = function(){
+				if(event.srcElement.scrollLeft == event.srcElement.oldScroll) return;
+				var oGridBody = document.getElementById("order_GridBody");
+				oGridBody.style.width = parseInt(event.srcElement.clientWidth) + event.srcElement.scrollLeft + "px";
+				event.srcElement.oldScroll == event.srcElement.scrollLeft;
+			}):true,
+		onmousedown == null?
+			(onmousedown = function(){
+					if(self.currentTH != null) return;
+					var obj = document.elementFromPoint(event.x,event.y);
+					var objL = document.elementFromPoint(event.x - 1,event.y);
+
+					if(obj.tagName.toLowerCase() == "th") 
+					{
+					
+						if(objL.tagName.toLowerCase() == "th")
+						{
+							obj = objL;
+						}
+						if(obj.className == "fixed") return;
+						self.currentX = event.x;
+						self.currentTH = obj.childNodes[0];
+						self.currentTH.setCapture();
+					}
+			}):true,
+		onmouseup == null?
+			(onmouseup = function(){
+					if(self.currentTH != null)
+					{
+						self.currentTH.releaseCapture();
+						self.currentTH = null;
+					}	
+			}):true,
+			
+		onmousemove == null?
+			(onmousemove = function(){
+					if (CurrentRecordCount == 0){
+					  return;
+					}
+					if(self.currentTH != null)
+					{
+						var width = Math.round(parseInt(self.currentTH.clientWidth) + event.x - self.currentX);
+						if(width < 0) width = 0;
+						var dt = parseInt(self.currentTH.style.width) - width;
+						self.currentTH.style.width = width;
+						__resizeCell(self.currentTH.columnIndex,self.currentTH.style.width);
+						self.currentX = event.x;
+					}
+			}):true,
+		self.__resizeCell == null?
+			(self.__resizeCell = function(idx, width){
+					var nLen = CurrentRecordCount;
+				//	alert(CurrentRecordCount);
+					if (nLen==1){
+						var cells = document.getElementById("GridBody_Cells");
+						var rows = cells.childNodes;
+						var cell = rows[0].childNodes[idx].childNodes[0];
+						var resetPattern = /style=[^\s\t\n]+/;
+						cell.outerHTML = cell.outerHTML.toString().replace(resetPattern, "style='width:" +width + "'");
+					}else{
+						for (var i=0;i<nLen;i++)
+						{
+							var cells = eval("C_Column" + idx+ "[" + i + "]");
+							var resetPattern = /style=[^\s\t\n]+/;
+							cells.outerHTML = cells.outerHTML.toString().replace(resetPattern, "style='width:" +width + "'");
+						//	alert(cells.outerHTML);
+						}
+					}
+			}):true
+	)
+}
+
+
+.bodyContainer
+{
+	height:100%;
+	width:100%;
+	overflow-x:hidden;
+	overflow-y:auto;
+}
+.gridCell_standard
+{
+	font-size: 12px;
+	overflow:hidden;
+	nw:expression(this.noWrap=true);
+	margin-left: 0px;
+	margin-right: 1px;
+	padding-left: 3px;
+	cursor:default;
+}
+th 
+{
+	border-left:1px solid #2862B0;
+	border-right:1px solid #ffffff;
+	background-color:#4B82CD;
+	background-image:url('images/unicorn_JobList_BG.gif');
+                color:#ffffff;
+	font-style:normal;
+	font-size: 12px;
+	font-weight:normal;
+	height:22px;
+	cursor:col-resize;
+}
+.unicornContent1
+{
+    BORDER-TOP: 0px solid;
+    BORDER-LEFT: #ffffff 1px solid;
+    BORDER-RIGHT: #727099 1px solid;
+    BORDER-BOTTOM: #727099 1px solid;
+    DISPLAY: inline;
+    FLOAT: left;
+    WIDTH: 70px;
+    CURSOR: hand;
+    POSITION: relative;
+    TOP: -2px;
+    HEIGHT: 17px;
+    BACKGROUND-COLOR: #d6e2ed;
+}
+.unicornContent2
+{
+    BORDER-TOP: 0px solid;
+    BORDER-LEFT: #ffffff 1px solid;
+    BORDER-RIGHT: #727099 1px solid;
+    BORDER-BOTTOM: #727099 1px solid;
+    BACKGROUND-POSITION: left top;
+    Z-INDEX: 3;
+    WIDTH: 71px;
+    CURSOR: hand;
+    POSITION: relative;
+    TOP: -1px;
+    HEIGHT: 20px;
+    BACKGROUND-COLOR: #d6e2ed;
+}
+.unicornContent3
+{
+    align: center;
+    valign: top;
+    height:100%;
+    background-color:#d6e2ed;
+    padding:5px;
+}
+.unicornContent31
+{
+    BORDER: 0px;
+    BACKGROUND-COLOR: #d6e2ed;
+    padding:10px;
+    align: center;
+    valign: top;
+    height:100%;
+}
+.unicornContent4
+{
+    BORDER-RIGHT: #2D67A8 1px solid;
+    WIDTH: 71px;
+    HEIGHT: 1px;
+    BACKGROUND-COLOR: #ffffff
+}
+.unicornContent5
+{
+    BORDER-RIGHT: #2D67A8 1px solid;
+    BORDER-LEFT: #ffffff 1px solid;
+    WIDTH: 72px;
+    HEIGHT: 1px;
+    BACKGROUND-COLOR: #d6e2ed;
+}
+.TagDIV {
+	font-size: 12px;
+	overflow:hidden;
+	nw:expression(this.noWrap=true);
+	margin-left: 0px;
+	margin-right: 1px;
+	padding-left: 3px;
+	cursor:default;
+	text-align:center;
+}

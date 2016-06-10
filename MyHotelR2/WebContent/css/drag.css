@@ -1,0 +1,37 @@
+.dragme{
+	position:relative;
+	left:0px; 
+	top:0px; 
+	width:90px; 
+	height:70px; 
+	z-index:1;
+	behavior:url(js/dragLayer.htc);
+}
+.dragbody{
+	behavior:url(js/drag.htc);
+}
+.icoTitle{
+	width:36px;
+	height:36px;
+	cursor:default;
+}
+.icotext{
+	padding:1px;
+	cursor:default;
+}
+/*以下两个样式为点击翻白样式*/
+.onclickStyle{
+	background-color:#003388;
+	color:#ffffff;
+	font-size: 12px;
+	cursor:default;
+	padding:1px;
+}
+.onclickLastStyle{
+	background-color:#ffffff;
+	padding:1px;
+	font-size: 12px;
+	color: #002866;
+	cursor:default;
+	
+}

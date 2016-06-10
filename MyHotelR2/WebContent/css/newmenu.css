@@ -1,0 +1,115 @@
+.Menunormal {
+	padding-right: 9px;
+	padding-left: 9px; 
+	font-size:12px; 
+	cursor: default;
+	color:#FFFFFF;
+}
+.Menuover {
+
+	border-top: #ffffff 1px solid;
+	border-left: #ffffff 1px solid; 
+	border-right: #9CBFDA 1px solid; 
+	border-bottom: #9CBFDA 1px solid;
+	padding-left: 8px; 
+	padding-right: 8px; 
+	font-size:12px; 
+	cursor: default; 
+	color:#FFFFFF;
+}
+.Menudown {
+	border-right: #ffffff 1px solid; 
+	padding-right: 8px; 
+	border-top: #9CBFDA 1px solid; 
+	padding-left: 8px; 
+	font-size:12px; 
+	border-left: #9CBFDA 1px solid;
+	cursor: default; 
+	border-bottom: #ffffff 1px solid;
+	color:#FFFFFF;
+}
+.MenunormalWin {
+	padding-right: 5px;
+	padding-left: 5px; 
+	font-size:12px; 
+	cursor: default;
+	color:#002866;
+	behavior:url(js/buttonMenu.htc);
+}
+.MenuoverWin {
+	border-right: #9CBFDA 1px solid; 
+	padding-right: 4px; 
+	border-top: #ffffff 1px solid; 
+	padding-left: 4px; 
+	font-size:12px; 
+	border-left: #ffffff 1px solid; 
+	cursor: default; 
+	border-bottom: #9CBFDA 1px solid;
+	color:#002866;
+	behavior:url(js/buttonMenu.htc);
+}
+.MenudownWin {
+	border-right: #ffffff 1px solid; 
+	padding-right: 4px; 
+	border-top: #9CBFDA 1px solid; 
+	padding-left: 4px; 
+	font-size:12px; 
+	border-left: #9CBFDA 1px solid; 
+	cursor: default; 
+	border-bottom: #ffffff 1px solid;
+	color:#002866;
+	behavior:url(js/buttonMenu.htc);
+}
+.menuItemHighlight {
+	padding-left: 10px; 
+	background-color: #3261A9;
+	padding-bottom: 2px; 
+	font-size:12px; 
+	cursor: hand; 
+	COLOR: #ffffff; 
+	padding-top: 2px; 
+	height: 19px;
+}
+.menuItemnormal {
+	padding-left: 10px; 
+	background-color: #E5F0FD; 
+	padding-bottom: 2px; 
+	font-size:12px;
+	cursor: hand; 
+	COLOR: #002866; 
+	padding-top: 2px; 
+	height: 19px;
+}
+.mouseRightMenu0 {
+	z-index: 60;
+	background-color: #E5F0FD; 
+	border-right: #7FADD0 1px solid;
+	border-top: #DAE7F0 1px solid;
+	border-left: #DAE7F0 1px solid;
+	border-bottom: #7FADD0 1px solid;
+	width: 140px;
+}
+.mouseRightMenu1 {
+	border-right: #7FADD0 1px solid;
+	border-top: #DAE7F0 1px solid;
+	border-left: #DAE7F0 1px solid;
+	border-bottom: #7FADD0 1px solid;
+	font-size: 12px; 
+	visibility: hidden; 
+	width: 140px;
+	cursor: default;
+	font-family: Arial, Helvetica,sans-serif; 
+	position: absolute;
+	background-color: #E5F0FD; 
+	text-align: center;
+}
+.menuitems {
+	padding-right: 10px; 
+	padding-left: 10px;
+}
+.TitleMenu {
+	border-left:1px solid #ffffff;
+	border-right:1px solid #8AA6CA;
+	height:24px;
+	width:2px;
+}

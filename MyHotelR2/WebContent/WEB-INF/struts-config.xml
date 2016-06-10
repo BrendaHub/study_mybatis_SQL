@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+  <data-sources />
+  <form-beans >
+    <form-bean name="loginForm" type="com.myhotel.struts.form.LoginForm" />
+    <form-bean name="addadminForm" type="com.myhotel.struts.form.AddadminForm" />
+    <form-bean name="addroomtypeForm" type="com.myhotel.struts.form.AddroomtypeForm" />
+    <form-bean name="addroomForm" type="com.myhotel.struts.form.AddroomForm" />
+    <form-bean name="addnewsForm" type="com.myhotel.struts.form.AddnewsForm" />
+    <form-bean name="addbadmanForm" type="com.myhotel.struts.form.AddbadmanForm" />
+    <form-bean name="addclientForm" type="com.myhotel.struts.form.AddclientForm" />
+    <form-bean name="ediclientForm" type="com.myhotel.struts.form.EdiclientForm" />
+    <form-bean name="clientInfoForm" type="com.myhotel.struts.form.ClientInfoForm" />
+    <form-bean name="addorder2Form" type="com.myhotel.struts.form.Addorder2Form" />
+    <form-bean name="tongjiForm" type="com.myhotel.struts.form.TongjiForm" />
+
+  </form-beans>
+
+  <global-exceptions />
+  <global-forwards />
+  <action-mappings >
+    <action
+      attribute="loginForm"
+      input="/index.jsp"
+      name="loginForm"
+      path="/login"
+      scope="request"
+      validate="true"
+      type="com.myhotel.struts.action.LoginAction">
+      <forward name="success" redirect="true" path="/mainframe.html" />
+    </action>
+    <action path="/loginout" type="com.myhotel.struts.action.LoginoutAction">
+      <forward name="success" redirect="true" path="/index.jsp" />
+    </action>
+    <action
+      input="/admin/changepwd.jsp"
+      path="/admin/changepwd"
+      type="com.myhotel.struts.action.ChangepwdAction">
+      <forward name="success" path="/templates/message.jsp" />
+    </action>
+    <action path="/admin/admins" type="com.myhotel.struts.action.AdminsAction">
+      <forward name="success" path="/admin/admins.jsp" />
+    </action>
+    <action
+      attribute="addadminForm"
+      input="/admin/addadmin.jsp"
+      name="addadminForm"
+      path="/admin/addadmin"
+      scope="request"
+      validate="false"
+      type="com.myhotel.struts.action.AddadminAction">
+      <forward name="success" path="/templates/message.jsp" />
+    </action>
+    <action path="/admin/deladmins" type="com.myhotel.struts.action.DeladminsAction">
+      <forward name="success" path="/templates/message.jsp" />
+    </action>
+    <action path="/bascitem/roomtype" type="com.myhotel.struts.action.RoomtypeAction">
+      <forward name="success" path="/bascitem/roomtype.jsp" />
+    </action>
+    <action
+      attribute="addroomtypeForm"
+      input="/bascitem/addroomtype.jsp"
+      name="addroomtypeForm"
+      path="/bascitem/addroomtype"
+      scope="request"
+      validate="false"
+      type="com.myhotel.struts.action.AddroomtypeAction">
+      <forward name="success" path="/templates/message.jsp" />
+    </action>
+    <action path="/bascitem/delroomtype" type="com.myhotel.struts.action.DelroomtypeAction">
+      <forward name="success" path="/templates/message.jsp" />
+    </action>
+    <action path="/bascitem/room" type="com.myhotel.struts.action.RoomAction">
+      <forward name="success" path="/bascitem/room.jsp" />
+    </action>
+    <action
+      attribute="addroomForm"
+      input="/bascitem/addroom.jsp"
+      name="addroomForm"
+      path="/bascitem/addroom"
+      scope="request"
+      validate="false"
+      type="com.myhotel.struts.action.AddroomAction">
+      <forward name="success" path="/templates/message.jsp" />
+    </action>
+    <action path="bascitem/delroom" type="com.myhotel.struts.action.DelroomAction">
+      <forward name="success" path="/templates/message.jsp" />
+    </action>
+    <action path="/bascitem/news" type="com.myhotel.struts.action.NewsAction">
+      <forward name="success" path="/bascitem/news.jsp" />
+    </action>
+    <action
+      attribute="addnewsForm"
+      input="/bascitem/addnews.jsp"
+      name="addnewsForm"
+      path="/bascitem/addnews"
+      scope="request"
+      type="com.myhotel.struts.action.AddnewsAction">
+      <forward name="success" path="/templates/message.jsp" />
+    </action>
+    <action path="/bascitem/delnews" type="com.myhotel.struts.action.DelnewsAction">
+      <forward name="success" path="/templates/message.jsp" />
+    </action>
+    <action path="/admin/badman" type="com.myhotel.struts.action.BadmanAction">
+      <forward name="success" path="/admin/badman.jsp" />
+    </action>
+    <action
+      attribute="addbadmanForm"
+      input="/admin/addbadman.jsp"
+      name="addbadmanForm"
+      path="/admin/addbadman"
+      scope="request"
+      validate="false"
+      type="com.myhotel.struts.action.AddbadmanAction">
+      <forward name="success" path="/templates/message.jsp" />
+    </action>
+    <action path="/admin/delbadman" type="com.myhotel.struts.action.DelbadmanAction">
+      <forward name="success" path="/templates/message.jsp" />
+    </action>
+    <action
+      attribute="addclientForm"
+      input="/zhuce.jsp"
+      name="addclientForm"
+      path="/zhuce"
+      scope="request"
+      validate="false"
+      type="com.myhotel.struts.action.ZhuceAction">
+      <forward name="success" path="/templates/message1.jsp" />
+    </action>
+    <action path="/admin/client" type="com.myhotel.struts.action.ClientAction">
+      <forward name="success" path="/admin/client.jsp" />
+    </action>
+    <action
+      attribute="ediclientForm"
+      input="/admin/addclient.jsp"
+      name="ediclientForm"
+      path="/admin/addclient"
+      scope="request"
+      type="com.myhotel.struts.action.AddclientAction">
+      <forward name="success" path="/templates/message.jsp" />
+    </action>
+    <action path="/admin/delclient" type="com.myhotel.struts.action.DelclientAction">
+      <forward name="success" path="/templates/message.jsp" />
+    </action>
+    <action
+      attribute="clientInfoForm"
+      input="/client/clientInfo.jsp"
+      name="clientInfoForm"
+      path="/client/clientInfo"
+      scope="request"
+      validate="false"
+      type="com.myhotel.struts.action.ClientInfoAction">
+      <forward name="success" path="/templates/message.jsp" />
+    </action>
+    <action path="/client/newslist" type="com.myhotel.struts.action.NewslistAction">
+      <forward name="success" path="/client/newslist.jsp" />
+    </action>
+    <action path="/client/shownews" type="com.myhotel.struts.action.ShownewsAction">
+      <forward name="success" path="/client/shownews.jsp" />
+    </action>
+    <action path="/client/pricelist" type="com.myhotel.struts.action.PricelistAction">
+      <forward name="success" path="/client/pricelist.jsp" />
+    </action>
+    <action path="/client/roomlist" type="com.myhotel.struts.action.RoomlistAction">
+      <forward name="success" path="/client/roomlist.jsp" />
+    </action>
+    <action path="/client/addcar" type="com.myhotel.struts.action.AddcarAction">
+      <forward name="success" path="/templates/message2.jsp" />
+    </action>
+    <action path="/client/delcar" type="com.myhotel.struts.action.DelcarAction">
+      <forward name="success" path="/client/carlist.jsp" />
+    </action>
+    <action path="/client/creatorder" type="com.myhotel.struts.action.CreatorderAction">
+      <forward name="success" path="/templates/message.jsp" />
+    </action>
+    <action path="/client/orderlist" type="com.myhotel.struts.action.OrderlistAction">
+      <forward name="success" path="/client/orderlist.jsp" />
+    </action>
+    <action path="/admin/order1" type="com.myhotel.struts.action.Order1Action">
+      <forward name="success" path="/admin/order1.jsp" />
+    </action>
+    <action path="/admin/returnorder" type="com.myhotel.struts.action.ReturnorderAction">
+      <forward name="success" path="/templates/message.jsp" />
+    </action>
+    <action path="/admin/delorder1" type="com.myhotel.struts.action.Delorder1Action">
+      <forward name="success" path="/templates/message.jsp" />
+    </action>
+    <action path="/admin/showclient" type="com.myhotel.struts.action.ShowclientAction">
+      <forward name="success" path="/admin/clientInfo.jsp" />
+    </action>
+    <action path="/admin/order2" type="com.myhotel.struts.action.Order2Action">
+      <forward name="success" path="/admin/order2.jsp" />
+    </action>
+    <action
+      attribute="addorder2Form"
+      input="/admin/addorder2.jsp"
+      name="addorder2Form"
+      path="/admin/addorder2"
+      scope="request"
+      validate="false"
+      type="com.myhotel.struts.action.Addorder2Action">
+      <forward name="success" path="/templates/message.jsp" />
+    </action>
+    <action path="/admin/delorder2" type="com.myhotel.struts.action.Delorder2Action">
+      <forward name="success" path="/templates/message.jsp" />
+    </action>
+    <action path="/admin/returnorder2" type="com.myhotel.struts.action.Returnorder2Action">
+      <forward name="success" path="/templates/message.jsp" />
+    </action>
+    <action
+      attribute="tongjiForm"
+      input="/admin/tongji.jsp"
+      name="tongjiForm"
+      path="/admin/tongji"
+      scope="request"
+      validate="false"
+      type="com.myhotel.struts.action.TongjiAction">
+      <forward name="success" path="/admin/tongji.jsp" />
+    </action>
+
+  </action-mappings>
+
+  <message-resources parameter="com.myhotel.struts.ApplicationResources" />
+  <message-resources parameter="com.myhotel.struts.ApplicationResources_zh_CN" />
+  
+  <plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+    <set-property property="pathnames" value="/WEB-INF/validator-rules.xml,/WEB-INF/validation.xml"/>
+  </plug-in>
+  <plug-in className="cn.myhotel.hibernate.InitHibernate" />
+</struts-config>
+
